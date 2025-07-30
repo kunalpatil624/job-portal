@@ -233,7 +233,7 @@ const Navbar = () => {
         <Button variant="outline"><Menu/></Button>
       </DropdownMenuTrigger>
       <DropdownMenuContent className="w-56" align="start">
-        <DropdownMenuLabel>My Account</DropdownMenuLabel>
+        <DropdownMenuLabel><Link to={"/profile"}>My Account</Link></DropdownMenuLabel>
         <DropdownMenuGroup>
 
           {
