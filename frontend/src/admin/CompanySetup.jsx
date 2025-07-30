@@ -10,7 +10,7 @@ import axios from 'axios'
 import { COMPANY_API_END_POINT } from '../components/utills/constand'
 import { useSelector } from 'react-redux'
 import { useEffect } from 'react'
-import useGetCompanyById from '../hooks/usegetCompanyById'
+import useGetCompanyById from '../hooks/useGetCompanyById'
 
 export const CompanySetup = () => {
     const param = useParams();
