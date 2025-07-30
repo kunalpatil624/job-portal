@@ -21,7 +21,6 @@ export const Companies = () => {
     }, [input])
   return (
     <div>
-        <Navbar/>
         <div className='max-w-6xl mx-auto my-10'>
             <div className='flex justify-between items-center my-5'>
                 <Input onChange={(e) => setInput(e.target.value)} className="w-fit" placeholder="Filter by name"></Input>
