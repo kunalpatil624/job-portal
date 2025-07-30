@@ -136,6 +136,10 @@ const Navbar = () => {
             </SheetTrigger>
 
             <SheetContent side="right" className="w-[250px] sm:w-[300px]">
+              <SheetHeader>
+                <SheetTitle>Menu</SheetTitle>
+                <SheetDescription>Navigational drawer</SheetDescription>
+              </SheetHeader>
               <div className="mt-8 flex flex-col gap-4 font-medium">
                 {user && (
                   <div className="flex items-center gap-3 p-3 rounded-md border bg-muted">
