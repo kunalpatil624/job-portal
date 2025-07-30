@@ -17,7 +17,7 @@ app.use(express.urlencoded({extended:true}));
 app.use(cookieParser());
 
 const corsOptions ={
-    origin:['http://localhost:5173' , "https://job-portal-sepia-five.vercel.app"],
+    origin:['http://localhost:5173' , 'https://job-portal-1-95gk.onrender.com', "https://job-portal-sepia-five.vercel.app"],
     credentials: true
 }
 
