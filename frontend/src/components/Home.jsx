@@ -20,7 +20,7 @@ const Home = () => {
     }
   },[])
   return (
-    <div>
+    <div className='w-full'>
         <HeroSection/>
         <CategouryCarousle/>
         <LatestJobs/>

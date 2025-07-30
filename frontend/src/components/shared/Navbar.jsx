@@ -11,6 +11,20 @@ import { toast } from "sonner";
 import axios from "axios";
 import { USER_API_AND_POINT } from "../utills/constand";
 import {Sheet,SheetContent,SheetDescription,SheetHeader,SheetTitle,SheetTrigger,} from "@/components/ui/sheet"
+import {
+  DropdownMenu,
+  DropdownMenuContent,
+  DropdownMenuGroup,
+  DropdownMenuItem,
+  DropdownMenuLabel,
+  DropdownMenuPortal,
+  DropdownMenuSeparator,
+  DropdownMenuShortcut,
+  DropdownMenuSub,
+  DropdownMenuSubContent,
+  DropdownMenuSubTrigger,
+  DropdownMenuTrigger,
+} from "@/components/ui/dropdown-menu"
 
 const Navbar = () => {
   const {user} = useSelector(store => store.auth);
@@ -128,7 +142,8 @@ const Navbar = () => {
         </div>
 
         <div className="md:hidden">
-          <Sheet>
+          {
+            /* <Sheet>
             <SheetTrigger asChild>
               <Button variant="ghost" size="icon">
                 <Menu />
@@ -211,7 +226,102 @@ const Navbar = () => {
                 )}
               </div>
             </SheetContent>
-          </Sheet>
+          </Sheet> */
+
+            <DropdownMenu>
+      <DropdownMenuTrigger asChild>
+        <Button variant="outline"><Menu/></Button>
+      </DropdownMenuTrigger>
+      <DropdownMenuContent className="w-56" align="start">
+        <DropdownMenuLabel>My Account</DropdownMenuLabel>
+        <DropdownMenuGroup>
+
+          {
+  !user ? (
+    <>
+      <DropdownMenuItem asChild>
+        <Link to="/home">
+          Home
+          <DropdownMenuShortcut>⌘H</DropdownMenuShortcut>
+        </Link>
+      </DropdownMenuItem>
+      <DropdownMenuItem asChild>
+        <Link to="/jobs">
+          Jobs
+          <DropdownMenuShortcut>⌘J</DropdownMenuShortcut>
+        </Link>
+      </DropdownMenuItem>
+      <DropdownMenuItem asChild>
+        <Link to="/browes">
+          Browse
+          <DropdownMenuShortcut>⌘B</DropdownMenuShortcut>
+        </Link>
+      </DropdownMenuItem>
+    </>
+  ) : user?.role === "student" ? (
+    <>
+      <DropdownMenuItem asChild>
+        <Link to="/home">
+          Home
+          <DropdownMenuShortcut>⌘H</DropdownMenuShortcut>
+        </Link>
+      </DropdownMenuItem>
+      <DropdownMenuItem asChild>
+        <Link to="/jobs">
+          Jobs
+          <DropdownMenuShortcut>⌘J</DropdownMenuShortcut>
+        </Link>
+      </DropdownMenuItem>
+      <DropdownMenuItem asChild>
+        <Link to="/browes">
+          Browse
+          <DropdownMenuShortcut>⌘B</DropdownMenuShortcut>
+        </Link>
+      </DropdownMenuItem>
+    </>
+  ) : (
+    <>
+      <DropdownMenuItem asChild>
+        <Link to="/home">
+          Companies
+          <DropdownMenuShortcut>⌘C</DropdownMenuShortcut>
+        </Link>
+      </DropdownMenuItem>
+      <DropdownMenuItem asChild>
+        <Link to="/admin/jobs">
+          Jobs
+          <DropdownMenuShortcut>⌘J</DropdownMenuShortcut>
+        </Link>
+      </DropdownMenuItem>
+    </>
+  )
+}
+
+
+
+  
+
+        </DropdownMenuGroup>
+        <DropdownMenuSeparator />
+        <DropdownMenuSeparator />
+        <DropdownMenuItem disabled>GitHub</DropdownMenuItem>
+        <DropdownMenuItem disabled>Support</DropdownMenuItem>
+        <DropdownMenuItem disabled>API</DropdownMenuItem>
+        <DropdownMenuSeparator />
+        {
+          !user ? (
+            <DropdownMenuItem>
+                   <Link to={"/login"}>Login</Link>
+          <DropdownMenuShortcut>⇧⌘Q</DropdownMenuShortcut>
+        </DropdownMenuItem>
+          ) : (<DropdownMenuItem>
+           <Button className="hover:cursor-pointer" onClick={logOutHandler} variant="link"> Log-out</Button>
+          <DropdownMenuShortcut>⇧⌘Q</DropdownMenuShortcut>
+        </DropdownMenuItem>)
+        }
+      </DropdownMenuContent>
+    </DropdownMenu>
+          }
         </div>
       </div>
     </div>

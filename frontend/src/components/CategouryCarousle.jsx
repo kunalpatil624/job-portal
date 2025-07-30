@@ -31,13 +31,12 @@ const CategouryCarousle = () => {
       <Carousel className="w-full max-w-xl mx-auto my-20 grid">
         <CarouselContent className="flex overflow-x-auto no-scrollbar snap-x snap-mandatory scroll-smooth ">
           {categoury.map((cat, index) => (
-            <CarouselItem className="basis-1/2 sm:basis-1/3 md:basis-1/3 lg:basis-1/3" key={index}>
+            <CarouselItem className="basis-1/2 sm:basis-1/3 md:basis-1/3 lg:basis-1/3" keykey={index}>
               <Button onClick={() => searchHandler(cat)} variant="outline" className="rounded-full"> {cat} </Button>
             </CarouselItem>
           ))}
         </CarouselContent>
         <CarouselPrevious />
-        <CarouselNext />
       </Carousel>
     </div>
   );
