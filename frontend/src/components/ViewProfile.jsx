@@ -6,7 +6,7 @@ import { Badge } from "@/components/ui/badge"
 import { Label } from "@/components/ui/label"
 import AppliedJobTable from './AppliedJobTable';
 import { Button } from "@/components/ui/button";
-import UpdateProfileDialog from './updateProfileDialog';
+import UpdateProfileDialog from './UpdateProfileDialog';
 import { useSelector, useStore } from 'react-redux';
 import useGetAppliedJobs from '../hooks/useGetAppliedJobs';
 
