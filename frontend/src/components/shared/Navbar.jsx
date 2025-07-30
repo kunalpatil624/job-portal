@@ -39,6 +39,7 @@ const Navbar = () => {
               job <span className="text-red-500">portal</span>
             </h1>
           </Link>
+          {/* <img className="h-40 w-40" src="https://res.cloudinary.com/dtyuevzyx/image/upload/v1753386038/ChatGPT_Image_Jul_25_2025_01_09_37_AM_sbl7r4.png" alt="" /> */}
         </div>
 
         <div className="hidden md:flex flex gap-12 items-center">
