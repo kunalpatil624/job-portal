@@ -1,31 +1,60 @@
-import React, { useEffect } from 'react'
-import Navbar from './shared/Navbar'
-import HeroSection from './HeroSection'
-import CategouryCarousle from './CategouryCarousle'
-import LatestJobs from './LatestJobs'
-import Footer from './shared/Footer'
-import useGetAllJobs from '../hooks/useGetAllJobs'
-import { useSelector } from 'react-redux'
-import store from './redux/store'
-import { useNavigate } from 'react-router-dom'
+// import React, { useEffect } from 'react';
+// import HeroSection from './HeroSection';
+// import CategouryCarousle from './CategouryCarousle';
+// import LatestJobs from './LatestJobs';
+// import useGetAllJobs from '../hooks/useGetAllJobs';
+// import { useSelector } from 'react-redux';
+// import { useNavigate } from 'react-router-dom';
+
+// const Home = () => {
+//   useGetAllJobs();
+//   const { user } = useSelector((store) => store.auth);
+//   const navigate = useNavigate();
+
+//   useEffect(() => {
+//     if (user?.role === 'recruiter') {
+//       navigate("/admin/companies");
+//     }
+//   }, [user, navigate]);
+
+//   return (
+//     <div className='w-full'>
+//       <HeroSection />
+//       <CategouryCarousle />
+//       <LatestJobs />
+//     </div>
+//   );
+// };
+
+// export default Home;
+
+
+import React, { useEffect } from 'react';
+import HeroSection from './HeroSection';
+import CategouryCarousle from './CategouryCarousle';
+import LatestJobs from './LatestJobs';
+import useGetAllJobs from '../hooks/useGetAllJobs';
+import { useSelector } from 'react-redux';
+import { useNavigate } from 'react-router-dom';
 
 const Home = () => {
-  
   useGetAllJobs();
-  const {user} = useSelector(store => store.auth);
-  const navigate = useNavigate()
-  useEffect(()=>{
-    if(user?.role === 'recruiter'){
+  const { user } = useSelector((store) => store.auth);
+  const navigate = useNavigate();
+
+  useEffect(() => {
+    if (user?.role === 'recruiter') {
       navigate("/admin/companies");
     }
-  },[])
+  }, [user, navigate]);
+
   return (
     <div className='w-full'>
-        <HeroSection/>
-        <CategouryCarousle/>
-        <LatestJobs/>
+      <HeroSection />
+      <CategouryCarousle />
+      <LatestJobs />
     </div>
-  )
-}
+  );
+};
 
-export default Home
+export default Home;
