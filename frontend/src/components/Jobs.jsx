@@ -53,7 +53,6 @@ const Jobs = () => {
 
   return (
     <div>
-      <Navbar />
       <div className="max-w-7xl mx-auto mt-5">
         <div className="flex gap-5">
           {/* Sidebar Filter */}
@@ -77,7 +76,6 @@ const Jobs = () => {
           </div>
         </div>
       </div>
-      <Footer />
     </div>
   );
 };
