@@ -40,6 +40,7 @@ import { useNavigate } from 'react-router-dom';
 const Home = () => {
   useGetAllJobs();
   const { user } = useSelector((store) => store.auth);
+  const { allJobs } = useSelector((store) => store.job);
   const navigate = useNavigate();
 
   useEffect(() => {
@@ -50,6 +51,11 @@ const Home = () => {
 
   return (
     <div className='w-full'>
+       {/* 🟨 DEBUG: Jobs Count Badge (for iPhone/Safari check) */}
+      <div className="text-white bg-blue-700 text-xs p-1 px-3 fixed top-0 left-0 z-50 rounded-br-xl shadow-md">
+        {allJobs?.length || 0} jobs fetched
+      </div>
+      
       <HeroSection />
       <CategouryCarousle />
       <LatestJobs />
