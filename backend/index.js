@@ -144,8 +144,6 @@ import cors from "cors";
 import cookieParser from "cookie-parser";
 
 import connectDB from "./utils/DB.js";
-
-// routes
 import userRoute from "./routers/user.router.js";
 import companyRoute from "./routers/company.router.js";
 import jobsRouter from "./routers/job.router.js";
@@ -153,37 +151,34 @@ import applicationRouter from "./routers/application.router.js";
 
 const app = express();
 
-// ✅ Best CORS + Cookies setup
-const corsOptions = {
+app.use(cors({
   origin: [
     "http://localhost:5173",
     "https://job-portal-1-95gk.onrender.com",
-    "https://job-portal-sepia-five.vercel.app",
+    "https://job-portal-sepia-five.vercel.app"
   ],
-  credentials: true, // ✅ allow cookies across origin
-};
+  credentials: true
+}));
 
-app.use(cors(corsOptions)); // ✅ use before routes
 app.use(cookieParser());
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 
-// ✅ Routes
 app.use("/api/v1/user", userRoute);
 app.use("/api/v1/company", companyRoute);
 app.use("/api/v1/job", jobsRouter);
 app.use("/api/v1/application", applicationRouter);
 
-// ✅ Server start
 const PORT = process.env.PORT || 3000;
+
 const startServer = async () => {
   try {
     await connectDB();
     app.listen(PORT, () => {
-      console.log(`🚀 Server running on port ${PORT}`);
+      console.log(`Server run on port ${PORT}`);
     });
   } catch (err) {
-    console.error("❌ Server failed to start", err);
+    console.log("Error:", err);
     process.exit(1);
   }
 };
