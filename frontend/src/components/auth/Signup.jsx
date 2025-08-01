@@ -73,7 +73,7 @@ function Signup() {
           onSubmit={submitHandler}
           className="w-[95%] sm:w-4/5 md:w-2/3 lg:w-1/2 border border-gray-200 rounded-md p-3 sm:p-4"
         >
-          <h1 className="font-bold text-xl mb-5">Signup/<span onClick={"/signup"} className="hover:cursor-pointer hover:underline"><Link to={"/login"}>Login</Link></span></h1>
+          <h1 className="font-bold text-xl mb-5">Signup/<span onClick={() => navigate("/login")} className="hover:cursor-pointer hover:underline text-blue-600">Login</span></h1>
           <div className="my-2">
             <Label className="my-1">Full Name</Label>
             <Input
