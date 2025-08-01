@@ -25,9 +25,9 @@ const JobDescription = () => {
             const res = await axios.get(`${APPLICATION_API_AND_POINT}/apply/${jobId}`, {withCredentials:true});
             
             if(res.data.success){
-                setIsApplied(true); // Update the local state
+                setIsApplied(true); 
                 const updatedSingleJob = {...singleJob, applications:[...singleJob.applications,{applicant:user?._id}]}
-                dispatch(setSingleJob(updatedSingleJob)); // helps us to real time UI update
+                dispatch(setSingleJob(updatedSingleJob)); 
                 toast.success(res.data.message);
 
             }
@@ -44,7 +44,7 @@ const JobDescription = () => {
                 const res = await axios.get(`${JOB_API_AND_POINT}/get/${jobId}`,{withCredentials:true});
                 if(res.data.success){
                     dispatch(setSingleJob(res.data.job));
-                    setIsApplied(res.data.job.applications.some(application=>application.applicant?._id === user?._id)) // Ensure the state is in sync with fetched data
+                    setIsApplied(res.data.job.applications.some(application=>application.applicant?._id === user?._id)) 
                 }
             } catch (error) {
                 console.log(error);

@@ -24,7 +24,7 @@ const useGetAllJobs = () => {
     };
 
     fetchAllJobs();
-  }, [searchedQuery]); // run when search query changes
+  }, [searchedQuery]); 
 };
 
 export default useGetAllJobs;

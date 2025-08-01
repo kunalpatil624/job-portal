@@ -5,7 +5,6 @@ import { Badge } from "@/components/ui/badge"
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
 import { useNavigate } from 'react-router-dom';
 
-// const jobId  = "sffsfafrabdfdsg";
 const Job = ({job}) => {
     const daysAgoFunction = (mongodbTime) => {
         const createdAt = new Date(mongodbTime);
