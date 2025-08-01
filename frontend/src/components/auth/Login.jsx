@@ -58,13 +58,13 @@ const submitHandler = async(e) =>{
         <form onSubmit={submitHandler} className="w-[95%] sm:w-4/5 md:w-2/3 lg:w-1/2 border border-gray-200 rounded-md p-3 sm:p-4">
           <h1 className="font-bold text-xl mb-5">Login/<span onClick={() => navigate("/signup")} className="text-blue-600 hover:cursor-pointer hover:underline">signup</span></h1>
           <div className="my-2">
-            <Label htmlFor="email">Email</Label>
+            <Label className="m-1" htmlFor="email">Email</Label>
             <Input id="email" type="email" placeholder="knlpvvtt@gmail.com" name="email" value={input.email} onChange={changeEventHandler}></Input>
           </div>
 
           <div className="my-2">
-            <Label htmlFor="password">Password</Label>
-            <Input id="password" type="password" placeholder="passwoed" name="password" value={input.password} onChange={changeEventHandler}></Input>
+            <Label className="m-1" htmlFor="password">Password</Label>
+            <Input id="password" type="password" password="passwoed" name="password" value={input.password} onChange={changeEventHandler}></Input>
             
           </div>
 

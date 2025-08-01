@@ -14,7 +14,7 @@ const Job = ({job}) => {
     }
     const navigate = useNavigate()
   return (
-    <div onClick={()=> navigate(`/jobs/description/${job?._id}`)} className='border border bg-white-b-gray-100 rounded-md shadow-lg p-5 hover:shadow-2xl hover:cursor-pointer'>
+    <div onClick={()=> navigate(`/jobs/description/${job?._id}`)} className='border border bg-white-b-gray-100 rounded-md shadow-lg p-5 hover:shadow-2xl transition duration-300 hover:cursor-pointer'>
         <div className='flex justify-between items-center'>
                             <p className='text-sm text-gray-500'>{daysAgoFunction(job?.createdAt) === 0 ? "Today" : `${daysAgoFunction(job?.createdAt)} days ago`}</p>
         <Button variant="overline" className="rounded-full" size="icon"><Bookmark/></Button>

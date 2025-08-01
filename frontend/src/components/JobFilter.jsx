@@ -3,6 +3,8 @@ import { RadioGroup, RadioGroupItem } from "@/components/ui/radio-group";
 import { Label } from "@/components/ui/label"
 import {Sheet,SheetContent,SheetDescription,SheetHeader,SheetTitle,SheetTrigger,} from "@/components/ui/sheet"
 import { Button } from './ui/button';
+import { useDispatch } from 'react-redux';
+import { setSearchQuery } from './redux/jobSlice';
 
 const filterData = [
   {
@@ -19,32 +21,36 @@ const filterData = [
   }
 ]
 
-const JobFilter = () => {
+const JobFilter = () => {   
   const [selectedValue, setSelectedValue] = useState("");
+  const dispatch = useDispatch()
   const changeHandler = (value) =>{
     setSelectedValue(value)
   }
 
   useEffect(() => {
-    console.log(selectedValue)
+    dispatch(setSearchQuery(selectedValue))
   }, [selectedValue])
   return (
-    <div className='hidden md:flex p-3 bg-white rounded-md w-full'>
+    <div className='p-3 bg-white rounded-md w-full'>
       <div>
       <h1 className="text-lg font-semibold">Filter Job</h1>
       <hr className='my-3' />
       <RadioGroup value = {selectedValue} onValueChange={changeHandler} defaultValue="comfortable">
         {
-          filterData.map((data) => (
+          filterData.map((data, index) => (
             <div key={data.filterType}>
               <h1 className="text-md font-medium">{data.filterType}</h1>
               {
-                data.array.map((item) => (
-                  <div key={`${data.filterType}-${item}`} className='flex items-center space-x-2 my-2'>
-                    <RadioGroupItem value={item} id={`${data.filterType}-${item}`} />
-                    <Label htmlFor={`${data.filterType}-${item}`}>{item}</Label>
+                data.array.map((item, idx) => {
+                  const itemId = `${index} - ${idx}`
+                  return(
+                  <div className='flex items-center space-x-2 my-2'>
+                    <RadioGroupItem className=" border-2 border-black text-black focus:ring-0 focus:ring-black hover:cursor-pointer" value={item} id={itemId} />
+                    <Label htmlFor={itemId}>{item}</Label>
                   </div>
-                ))
+                  )
+                })
               }
             </div>
           ))

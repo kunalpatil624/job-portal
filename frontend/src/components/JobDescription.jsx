@@ -67,7 +67,7 @@ const JobDescription = () => {
                   </div>
                 </div>
             <div>
-              <Button   disabled={isApplied} onClick={isApplied ? null : applyJobHandler} className={`${isApplied ? "bg-blue-600 cursor-not-allowed" : "bg-[#6A38C2]" }`}>{isApplied ? "Already Applied" : "Apply Know"} </Button>
+              <Button   disabled={isApplied} onClick={isApplied ? null : applyJobHandler} className={`${isApplied ? "bg-blue-600 cursor-not-allowed" : "bg-[#6A38C2]" }`}>{isApplied ? "Already Applied" : "Apply now"} </Button>
             </div>
             </div>
             <h1 className='border-b-2 border-b-gray-200 font-medium py-4'>Job Description</h1>
