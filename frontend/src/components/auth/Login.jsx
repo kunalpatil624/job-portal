@@ -56,7 +56,7 @@ const submitHandler = async(e) =>{
     <div className="mt-15">
       <div className="flex justify-center max-w-9xl mx-auto">
         <form onSubmit={submitHandler} className="w-[95%] sm:w-4/5 md:w-2/3 lg:w-1/2 border border-gray-200 rounded-md p-3 sm:p-4">
-          <h1 className="font-bold text-xl mb-5">Login/<span onClick={() => navigate("/signup")} className="hover:cursor-pointer hover:underline">signup</span></h1>
+          <h1 className="font-bold text-xl mb-5">Login/<span onClick={() => navigate("/signup")} className="text-blue-600 hover:cursor-pointer hover:underline">signup</span></h1>
           <div className="my-2">
             <Label htmlFor="email">Email</Label>
             <Input id="email" type="email" placeholder="knlpvvtt@gmail.com" name="email" value={input.email} onChange={changeEventHandler}></Input>
