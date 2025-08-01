@@ -75,7 +75,7 @@ function Signup() {
         >
           <h1 className="font-bold text-xl mb-5">Signup/<span onClick={() => navigate("/login")} className="hover:cursor-pointer hover:underline text-blue-600">Login</span></h1>
           <div className="my-2">
-            <Label className="my-1">Full Name</Label>
+            <Label className="m-1">Full Name</Label>
             <Input
               type="text"
               placeholder="kunal patil"
@@ -86,7 +86,7 @@ function Signup() {
           </div>
 
           <div className="my-2">
-            <Label>Email</Label>
+            <Label className="m-1">Email</Label>
             <Input
               type="email"
               placeholder="knlpvvtt@gmail.com"
@@ -97,7 +97,7 @@ function Signup() {
           </div>
 
           <div className="my-2">
-            <Label>Phone Number</Label>
+            <Label className="m-1">Phone Number</Label>
             <Input
               type="text"
               placeholder="6265xxxxx1"
@@ -108,7 +108,7 @@ function Signup() {
           </div>
 
           <div className="my-2">
-            <Label>Password</Label>
+            <Label className="m-1">Password</Label>
             <Input
               type="password"
               placeholder="passwoed"
@@ -128,7 +128,7 @@ function Signup() {
                   value="student"
                   checked={input.role === "student"}
                   onChange={changeEventHandler}
-                  className="cursor-pointer h-4 w-4"
+                  className="cursor-pointer h-4 w-4 bg-transparent "
                 />
                 <Label htmlFor="student" className="cursor-pointer">
                   student
