@@ -17,7 +17,7 @@ app.use(cors({
   origin: [
     "http://localhost:5173",
     "https://job-portal-1-95gk.onrender.com",
-    "https://job-portal-sepia-five.vercel.app"
+    "https://job-portal-ten-ruby-18.vercel.app"
   ],
   methods: ["GET", "POST", "PUT", "DELETE"],
   allowedHeaders: ["Content-Type", "Authorization"],
