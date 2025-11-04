@@ -119,7 +119,7 @@ function App() {
   return (
     <>
     <RouterProvider router={appRouter} />
-    <DebugToggle/>
+    {/* <DebugToggle/> */}
     </>
   );
 }
