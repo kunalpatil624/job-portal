@@ -37,7 +37,8 @@
     "sonner": "^2.0.6",
     "tailwind-merge": "^3.3.1",
     "tailwind-scrollbar": "^4.0.2",
-    "tailwindcss": "^4.1.11"
+    "tailwindcss": "^4.1.11",
+    "vconsole": "^3.15.1"
   },
   "devDependencies": {
     "@eslint/js": "^9.29.0",

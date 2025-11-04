@@ -14,6 +14,7 @@ import NewJobs from './admin/NewJobs';
 import Applicants from './admin/Applicants';
 import ProtectedRoute from './components/ProtectedRoute';
 import Layout from './components/shared/Layout'
+import DebugToggle from './components/DebugToggle';
 
 const appRouter = createBrowserRouter([
    {
@@ -116,7 +117,10 @@ const appRouter = createBrowserRouter([
 
 function App() {
   return (
+    <>
     <RouterProvider router={appRouter} />
+    <DebugToggle/>
+    </>
   );
 }
 
