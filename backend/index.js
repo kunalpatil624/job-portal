@@ -19,8 +19,11 @@ app.use(cors({
     "https://job-portal-1-95gk.onrender.com",
     "https://job-portal-sepia-five.vercel.app"
   ],
-  credentials: true
+  methods: ["GET", "POST", "PUT", "DELETE"],
+  allowedHeaders: ["Content-Type", "Authorization"],
+  credentials: true,
 }));
+
 
 app.use(cookieParser());
 app.use(express.json());

@@ -88,7 +88,6 @@ export const login = async (req, res) =>{
             userId:user._id,
         };
         const token = await jwt.sign(tokenData, process.env.SECRET_KEY, {expiresIn: '1d'});
-
         user = {
             _id:user._id,
             fullname:user.fullname,
@@ -97,6 +96,8 @@ export const login = async (req, res) =>{
             role:user.role,
             profile:user.profile
         };
+        
+        res.header("Access-Control-Allow-Credentials", "true");
 
         return res.status(200).cookie("token", token, {maxAge:1*24*60*60*1000, httpOnly:true, secure: true, sameSite:'None'}).json({
             message:`Wellcome back ${user.fullname}`,
