@@ -28,6 +28,7 @@ const ViewProfile = () => {
             <div>
             <Avatar className="w-30 h-30">
                 <AvatarImage src={user?.profile?.profilePhoto}/>
+                <AvatarFallback>CN</AvatarFallback>
             </Avatar>
         </div>
         <div>

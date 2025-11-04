@@ -111,6 +111,7 @@ const Navbar = () => {
                     src={user?.profile?.profilePhoto}
                     alt="profile-photo"
                   />
+                  <AvatarFallback>CN</AvatarFallback>
                 </Avatar>
               </PopoverTrigger>
               <PopoverContent>
@@ -120,6 +121,7 @@ const Navbar = () => {
                       src={user?.profile?.profilePhoto}
                       alt="@profile-photo"
                     />
+                    <AvatarFallback>CN</AvatarFallback>
                   </Avatar>
                   <div>
                     <h4 className="font-medium">{user?.fullname}</h4>

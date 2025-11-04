@@ -81,9 +81,9 @@ const Jobs = () => {
 
         <div className="flex-1 h-[88vh] overflow-y-auto p-5">
           {filterJobs.length === 0 ? (
-            <span className="text-center text-xl text-red-500 w-full">
-              Job Not Found
-            </span>
+            <div className="w-full flex justify-center">
+              <p className="text-center w-full">Job Not Found</p>
+            </div>
           ) : (
             <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-5">
               {filterJobs.map((job) => (
