@@ -64,35 +64,39 @@ const submitHandler = async(e) =>{
 
           <div className="my-2">
             <Label className="m-1" htmlFor="password">Password</Label>
-            <Input id="password" type="password" password="passwoed" name="password" value={input.password} onChange={changeEventHandler}></Input>
+            <Input id="password" type="password" placeholder="password" name="password" value={input.password} onChange={changeEventHandler}></Input>
             
           </div>
 
           <div className=" my-2 items-center justify-center ">
-            <RadioGroup className="flex items-center gap-4 my-5 ">
-              <div className="flex items-center gap-3">
-                <Input
-                  type="radio"
-                  name="role"
-                  value="student"
-                  checked={input.role === 'student'}
-                  onChange={changeEventHandler}
-                  className="cursor-pointer"
-                ></Input>
-                <Label htmlFor="r1">Student</Label>
-              </div>
-              <div className="flex items-center gap-3">
-                <Input
-                  type="radio"
-                  name="role"
-                  value="recruiter"
-                  checked={input.role === 'recruiter'}
-                  onChange={changeEventHandler}
-                  className="cursor-pointer text-color-wight"
-                ></Input>
-                <Label htmlFor="r2">Recruiter</Label>
-              </div>
-            </RadioGroup>
+            <RadioGroup className="flex items-center gap-4 my-5">
+  <div className="flex items-center gap-3">
+    <input
+      id="r1"
+      type="radio"
+      name="role"
+      value="student"
+      checked={input.role === "student"}
+      onChange={changeEventHandler}
+      className="cursor-pointer appearance-none w-4 h-4 rounded-full border-2 border-black bg-white checked:bg-blue-500 checked:border-black-500 transition-all duration-200"
+    />
+    <Label htmlFor="r1" className="">Student</Label>
+  </div>
+
+  <div className="flex items-center gap-3">
+    <input
+      id="r2"
+      type="radio"
+      name="role"
+      value="recruiter"
+      checked={input.role === "recruiter"}
+      onChange={changeEventHandler}
+      className="cursor-pointer appearance-none w-4 h-4 rounded-full border-2 border-black bg-white checked:bg-blue-500 checked:border-black-500 transition-all duration-200"
+    />
+    <Label htmlFor="r2" className="">Recruiter</Label>
+  </div>
+</RadioGroup>
+
           </div>
           {
             loading ? (

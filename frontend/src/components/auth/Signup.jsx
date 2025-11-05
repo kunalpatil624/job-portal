@@ -121,14 +121,14 @@ function Signup() {
           <div className=" my-2 items-center justify-center ">
             <RadioGroup className="flex flex-col sm:flex-row sm:items-center sm:gap-4 gap-3 my-5">
               <div className="flex items-center gap-2">
-                <Input
+                <input
                   id="student"
                   type="radio"
                   name="role"
                   value="student"
                   checked={input.role === "student"}
                   onChange={changeEventHandler}
-                  className="cursor-pointer h-4 w-4 bg-transparent "
+                  className="cursor-pointer appearance-none w-4 h-4 rounded-full border-2 border-black bg-white checked:bg-blue-500 checked:border-black-500 transition-all duration-200"
                 />
                 <Label htmlFor="student" className="cursor-pointer">
                   student
@@ -136,14 +136,14 @@ function Signup() {
               </div>
 
               <div className="flex items-center gap-2">
-                <Input
+                <input
                   id="recruiter"
                   type="radio"
                   name="role"
                   value="recruiter"
                   checked={input.role === "recruiter"}
                   onChange={changeEventHandler}
-                  className="cursor-pointer h-4 w-4"
+                  className="cursor-pointer appearance-none w-4 h-4 rounded-full border-2 border-black bg-white checked:bg-blue-500 checked:border-black-500 transition-all duration-200"
                 />
                 <Label htmlFor="recruiter" className="cursor-pointer">
                   recruiter
