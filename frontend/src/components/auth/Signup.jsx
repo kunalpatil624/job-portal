@@ -111,7 +111,7 @@ function Signup() {
             <Label className="m-1">Password</Label>
             <Input
               type="password"
-              placeholder="passwoed"
+              placeholder="password"
               name="password"
               value={input.password}
               onChange={changeEventHandler}
